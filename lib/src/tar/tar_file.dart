@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'dart:typed_data';
+
+import 'package:enough_convert/enough_convert.dart';
+
 import '../util/archive_exception.dart';
 import '../util/input_stream.dart';
 import '../util/output_stream.dart';
-import 'package:enough_convert/enough_convert.dart';
 
 /*  File Header (512 bytes)
  *  Offset Size Field

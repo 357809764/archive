@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:enough_convert/enough_convert.dart';
-
 import 'archive.dart';
 import 'archive_file.dart';
 import 'util/archive_exception.dart';
@@ -70,14 +68,6 @@ class ZipDecoder {
       file.crc32 = zf.crc32;
       file.compress = compress;
       file.lastModTime = zf.lastModFileDate << 16 | zf.lastModFileTime;
-
-      //------ 中文乱码
-      final needGbkDecode = zf.flags & 2048 == 0;
-      if (needGbkDecode) {
-        file.name = GbkCodec(allowInvalid: false).decode(zf.filename.codeUnits);
-        //gbk.decode(zf.filename.codeUnits);
-      }
-      //------
 
       archive.addFile(file);
     }

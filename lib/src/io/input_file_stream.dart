@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:enough_convert/enough_convert.dart';
+
 import '../util/abstract_file_handle.dart';
 import '../util/archive_exception.dart';
 import '../util/byte_order.dart';
@@ -8,7 +10,6 @@ import '../util/input_stream.dart';
 import '../util/ram_file_handle.dart';
 import 'file_buffer.dart';
 import 'file_handle.dart';
-import 'package:enough_convert/enough_convert.dart';
 
 class InputFileStream extends InputStreamBase {
   final FileBuffer _file;
